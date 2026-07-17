@@ -768,3 +768,575 @@ button {
     font-size: 31px;
   }
 }
+
+
+/* YJ DESIGN POLISH ONLY START */
+
+/* 전체 톤 */
+:root {
+  --yj-red: #a51d2d;
+  --yj-red-2: #c8323e;
+  --yj-ink: #121826;
+  --yj-navy: #172033;
+  --yj-muted: #667085;
+  --yj-cream: #f7f2ea;
+  --yj-card: #ffffff;
+  --yj-gold: #e7b75f;
+  --yj-line: rgba(18, 24, 38, 0.09);
+  --yj-shadow: 0 24px 70px rgba(18, 24, 38, 0.11);
+  --yj-shadow-soft: 0 14px 42px rgba(18, 24, 38, 0.08);
+}
+
+body {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(165, 29, 45, 0.045), transparent 26%),
+    radial-gradient(circle at 92% 18%, rgba(231, 183, 95, 0.08), transparent 24%),
+    var(--yj-cream) !important;
+  color: var(--yj-ink) !important;
+  word-break: keep-all;
+}
+
+/* 헤더 */
+.header {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(22px) saturate(1.2) !important;
+  border-bottom: 1px solid rgba(18, 24, 38, 0.06) !important;
+  box-shadow: 0 10px 34px rgba(18, 24, 38, 0.045);
+}
+
+.header-inner {
+  height: 86px !important;
+}
+
+.logo-symbol {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 18px !important;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0)),
+    linear-gradient(135deg, var(--yj-red), var(--yj-red-2)) !important;
+  box-shadow: 0 12px 30px rgba(165, 29, 45, 0.25);
+}
+
+.logo-text strong {
+  font-size: 22px !important;
+  font-weight: 950 !important;
+}
+
+.logo-text small {
+  color: #6b7280 !important;
+  font-weight: 800;
+}
+
+.nav {
+  gap: 34px !important;
+  font-size: 15px !important;
+}
+
+.nav a {
+  position: relative;
+  padding: 31px 0;
+  transition: color 0.18s ease;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 23px;
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: var(--yj-red);
+  transform: translateX(-50%);
+  transition: width 0.2s ease;
+}
+
+.nav a:hover {
+  color: var(--yj-red) !important;
+}
+
+.nav a:hover::after {
+  width: 22px;
+}
+
+/* 히어로: 빈 검은 화면 느낌 없애고 프리미엄 배너처럼 */
+.hero {
+  min-height: calc(100vh - 86px) !important;
+  background:
+    linear-gradient(135deg, #101723 0%, #1a2433 56%, #321b20 100%) !important;
+}
+
+.hero-image {
+  opacity: 0.72 !important;
+  filter: saturate(0.94) contrast(1.05) brightness(0.82) !important;
+  transform: scale(1.01);
+}
+
+.hero-cover {
+  background:
+    radial-gradient(circle at 76% 24%, rgba(200, 50, 62, 0.28), transparent 27%),
+    radial-gradient(circle at 20% 82%, rgba(231, 183, 95, 0.16), transparent 28%),
+    linear-gradient(90deg, rgba(12, 17, 27, 0.96) 0%, rgba(16, 23, 35, 0.82) 43%, rgba(18, 24, 38, 0.44) 72%, rgba(18, 24, 38, 0.18) 100%) !important;
+}
+
+.hero-inner {
+  min-height: calc(100vh - 86px) !important;
+  padding-top: 86px !important;
+  padding-bottom: 120px !important;
+  align-items: center !important;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--yj-gold) !important;
+  letter-spacing: 0.14em !important;
+}
+
+.label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--yj-red-2);
+  box-shadow: 0 0 0 5px rgba(200, 50, 62, 0.18);
+}
+
+.hero h1 {
+  max-width: 800px !important;
+  margin-top: 22px !important;
+  font-size: clamp(50px, 7.4vw, 88px) !important;
+  line-height: 0.98 !important;
+  letter-spacing: -0.085em !important;
+  text-shadow: 0 20px 70px rgba(0, 0, 0, 0.38);
+}
+
+.hero-desc {
+  max-width: 660px !important;
+  margin-top: 30px !important;
+  color: rgba(255, 255, 255, 0.84) !important;
+  font-size: 20px !important;
+  line-height: 1.75 !important;
+}
+
+.hero-buttons {
+  margin-top: 40px !important;
+}
+
+.hero-buttons a {
+  height: 58px !important;
+  padding: 0 26px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.hero-buttons a:first-child {
+  background: #fff !important;
+  color: var(--yj-red) !important;
+  box-shadow: 0 16px 45px rgba(255, 255, 255, 0.16);
+}
+
+.hero-buttons a:last-child {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+}
+
+.hero-info {
+  align-self: center !important;
+  padding: 30px !important;
+  border-radius: 32px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,255,255,0.92)) !important;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 34px 90px rgba(0, 0, 0, 0.34) !important;
+}
+
+.hero-info span {
+  color: var(--yj-red) !important;
+  font-weight: 950 !important;
+}
+
+.hero-info strong {
+  color: var(--yj-ink) !important;
+  font-size: 34px !important;
+}
+
+.hero-info p {
+  color: #6b7280 !important;
+}
+
+/* 요약 카드 */
+.overview {
+  margin-top: -66px !important;
+}
+
+.overview article {
+  position: relative;
+  overflow: hidden;
+  min-height: 168px !important;
+  padding: 28px !important;
+  border-radius: 30px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(255,255,255,0.75) !important;
+  box-shadow: var(--yj-shadow) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.overview article::before {
+  content: "";
+  position: absolute;
+  right: -34px;
+  top: -34px;
+  width: 100px;
+  height: 100px;
+  border-radius: 999px;
+  background: rgba(165, 29, 45, 0.07);
+}
+
+.overview article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(18, 24, 38, 0.15) !important;
+}
+
+.overview span {
+  color: var(--yj-red) !important;
+}
+
+.overview strong {
+  font-size: 22px !important;
+}
+
+.overview p {
+  color: var(--yj-muted) !important;
+}
+
+/* 섹션 공통 */
+.section {
+  padding-top: 112px !important;
+  padding-bottom: 112px !important;
+}
+
+.section-title {
+  margin-bottom: 44px !important;
+}
+
+.section-title.center {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title p,
+.fleet .label {
+  color: var(--yj-red) !important;
+}
+
+.section-title h2,
+.fleet h2,
+.contact h2 {
+  color: var(--yj-ink) !important;
+  font-weight: 950 !important;
+  letter-spacing: -0.075em !important;
+}
+
+/* 회사소개 */
+.about-grid {
+  gap: 26px !important;
+}
+
+.about-card.main {
+  position: relative;
+  overflow: hidden;
+  padding: 48px !important;
+  border-radius: 36px !important;
+  background:
+    linear-gradient(180deg, #ffffff, #fffaf5) !important;
+  border: 1px solid rgba(255,255,255,0.85);
+  box-shadow: var(--yj-shadow) !important;
+}
+
+.about-card.main::after {
+  content: "YJ";
+  position: absolute;
+  right: 34px;
+  bottom: -18px;
+  color: rgba(165, 29, 45, 0.055);
+  font-size: 150px;
+  font-weight: 950;
+  letter-spacing: -0.1em;
+}
+
+.about-card.main h3 {
+  font-size: 34px !important;
+}
+
+.about-card.main p {
+  position: relative;
+  z-index: 1;
+  color: #596579 !important;
+}
+
+.tags {
+  position: relative;
+  z-index: 1;
+}
+
+.tags span {
+  background: #fff2f3 !important;
+  color: var(--yj-red) !important;
+  border: 1px solid rgba(165, 29, 45, 0.1);
+}
+
+.about-card.side {
+  gap: 14px !important;
+}
+
+.about-card.side article {
+  border-radius: 30px !important;
+  background:
+    radial-gradient(circle at 92% 14%, rgba(200, 50, 62, 0.22), transparent 35%),
+    linear-gradient(135deg, #151d2b, #222c3d) !important;
+  box-shadow: var(--yj-shadow-soft);
+}
+
+/* 사업분야 */
+.business-grid {
+  gap: 20px !important;
+}
+
+.business-grid article {
+  position: relative;
+  overflow: hidden;
+  min-height: 292px !important;
+  border-radius: 32px !important;
+  background: #fff !important;
+  box-shadow: var(--yj-shadow-soft) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.business-grid article::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  bottom: -50px;
+  width: 150px;
+  height: 150px;
+  border-radius: 999px;
+  background: rgba(165, 29, 45, 0.06);
+}
+
+.business-grid article:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 30px 80px rgba(18, 24, 38, 0.14) !important;
+}
+
+.business-grid span {
+  width: auto !important;
+  min-width: 72px;
+  padding: 0 16px;
+  background:
+    linear-gradient(135deg, var(--yj-red), var(--yj-red-2)) !important;
+  box-shadow: 0 12px 28px rgba(165, 29, 45, 0.25);
+}
+
+.business-grid h3 {
+  font-size: 24px !important;
+}
+
+.business-grid p {
+  color: var(--yj-muted) !important;
+}
+
+/* 차량 안내 */
+.fleet {
+  background:
+    linear-gradient(180deg, #fff, #fbf7f0) !important;
+  border-top: 1px solid rgba(18, 24, 38, 0.06);
+  border-bottom: 1px solid rgba(18, 24, 38, 0.06);
+}
+
+.fleet-inner {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.fleet-cards {
+  gap: 16px !important;
+}
+
+.fleet-cards article {
+  padding: 28px !important;
+  border-radius: 28px !important;
+  background: #fff !important;
+  border: 1px solid rgba(18, 24, 38, 0.07) !important;
+  box-shadow: var(--yj-shadow-soft);
+  transition: transform 0.2s ease;
+}
+
+.fleet-cards article:hover {
+  transform: translateX(6px);
+}
+
+.fleet-cards strong {
+  color: var(--yj-ink);
+}
+
+/* 사업장 + 지도 */
+.locations {
+  padding-top: 118px !important;
+}
+
+.location-layout {
+  gap: 26px !important;
+}
+
+.branch-card {
+  position: relative;
+  overflow: hidden;
+  padding: 24px !important;
+  border-radius: 26px !important;
+  background: rgba(255,255,255,0.96) !important;
+  border: 1px solid rgba(18, 24, 38, 0.08) !important;
+  box-shadow: 0 14px 38px rgba(18, 24, 38, 0.07) !important;
+}
+
+.branch-card::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(165, 29, 45, 0.18);
+}
+
+.branch-card:hover,
+.branch-card.active {
+  border-color: rgba(165, 29, 45, 0.38) !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 24px 70px rgba(18, 24, 38, 0.13) !important;
+}
+
+.branch-card.active::after {
+  background: var(--yj-red);
+  box-shadow: 0 0 0 7px rgba(165, 29, 45, 0.12);
+}
+
+.branch-card span {
+  background: #fff2f3 !important;
+  color: var(--yj-red) !important;
+}
+
+.map-box {
+  border-radius: 36px !important;
+  background: #fff !important;
+  box-shadow: 0 30px 90px rgba(18, 24, 38, 0.13) !important;
+  border: 1px solid rgba(255,255,255,0.85) !important;
+}
+
+.kakao-map {
+  height: 590px !important;
+}
+
+.map-caption {
+  padding: 22px 26px !important;
+  background: linear-gradient(180deg, #fff, #fffaf5);
+}
+
+.marker-label {
+  border-color: var(--yj-red) !important;
+  color: var(--yj-ink) !important;
+}
+
+/* 연락처 */
+.contact {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(165, 29, 45, 0.24), transparent 28%),
+    linear-gradient(135deg, #111827, #1f2937) !important;
+}
+
+.contact-card {
+  box-shadow: 0 28px 80px rgba(0,0,0,0.28);
+}
+
+.contact-card strong {
+  color: var(--yj-red) !important;
+}
+
+/* 푸터 */
+.footer {
+  background: #0b111c !important;
+}
+
+/* 반응형 */
+@media (max-width: 980px) {
+  .hero-inner {
+    grid-template-columns: 1fr !important;
+    align-content: center;
+  }
+
+  .hero-info {
+    max-width: 360px;
+  }
+
+  .kakao-map {
+    height: 470px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    height: 70px !important;
+  }
+
+  .hero {
+    min-height: 690px !important;
+  }
+
+  .hero-inner {
+    min-height: 690px !important;
+    padding-top: 76px !important;
+    padding-bottom: 70px !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 13vw, 58px) !important;
+  }
+
+  .hero-desc {
+    font-size: 16px !important;
+  }
+
+  .hero-info {
+    max-width: none;
+  }
+
+  .overview {
+    margin-top: -34px !important;
+  }
+
+  .section {
+    padding-top: 82px !important;
+    padding-bottom: 82px !important;
+  }
+
+  .about-card.main {
+    padding: 30px !important;
+  }
+
+  .kakao-map {
+    height: 420px !important;
+  }
+}
+
+/* YJ DESIGN POLISH ONLY END */
