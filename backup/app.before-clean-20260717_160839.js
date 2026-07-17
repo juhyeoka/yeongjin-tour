@@ -14,6 +14,7 @@ document.querySelectorAll(".mobile-nav a").forEach((link) => {
 const branches = [
   {
     id: "daejeon",
+    region: "대전",
     short: "대전",
     name: "주식회사 영진관광 대전 본점",
     address: "대전광역시 서구 계백로1249번길 58",
@@ -22,6 +23,7 @@ const branches = [
   },
   {
     id: "sejong",
+    region: "세종",
     short: "세종",
     name: "주식회사 영진관광 세종 지사",
     address: "세종특별자치시 갈매로 351, 5118호",
@@ -30,6 +32,7 @@ const branches = [
   },
   {
     id: "cheonan",
+    region: "천안",
     short: "천안",
     name: "영진관광 천안 사업장",
     address: "충청남도 천안시 동남구 다가말2길 80, 1층",
@@ -38,6 +41,7 @@ const branches = [
   },
   {
     id: "boryeong",
+    region: "보령",
     short: "보령",
     name: "주식회사 하나관광 보령 사업장",
     address: "충청남도 보령시 번영로 30",
@@ -47,19 +51,8 @@ const branches = [
 ];
 
 let map;
+let kakaoMarkers = [];
 let activeInfoWindow = null;
-
-function showMapError(message) {
-  const mapContainer = document.querySelector("#kakaoMap");
-  if (!mapContainer) return;
-
-  mapContainer.innerHTML = `
-    <div class="map-loading">
-      <strong>지도를 불러오지 못했습니다</strong>
-      <p>${message}</p>
-    </div>
-  `;
-}
 
 function loadKakaoMapScript() {
   return new Promise((resolve, reject) => {
@@ -71,37 +64,47 @@ function loadKakaoMapScript() {
     const key = window.KAKAO_JAVASCRIPT_KEY;
 
     if (!key) {
-      reject(new Error("map-config.js에 카카오 JavaScript 키가 없습니다."));
+      reject(new Error("Kakao JavaScript key missing"));
       return;
     }
 
     const script = document.createElement("script");
     script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${key}&autoload=false`;
     script.onload = () => window.kakao.maps.load(resolve);
-    script.onerror = () => reject(new Error("카카오 SDK 로드 실패"));
+    script.onerror = reject;
     document.head.appendChild(script);
   });
 }
 
-function setCaption(branch) {
-  document.querySelector("#selectedBranchName").textContent = branch.name;
-  document.querySelector("#selectedBranchAddress").textContent = branch.address;
+function makeMarkerContent(branch) {
+  return `
+    <div class="custom-marker">
+      <div class="marker-pin"><span>${branch.short}</span></div>
+      <div class="marker-label">${branch.name}</div>
+    </div>
+  `;
 }
 
-function setActiveCard(id) {
+function setCaption(branch) {
+  const name = document.querySelector("#selectedBranchName");
+  const address = document.querySelector("#selectedBranchAddress");
+
+  if (name) name.textContent = branch.name;
+  if (address) address.textContent = branch.address;
+}
+
+function setActiveBranch(id) {
   document.querySelectorAll(".branch-card").forEach((card) => {
     card.classList.toggle("active", card.dataset.branch === id);
   });
-}
 
-function focusBranch(branch) {
-  if (!map || !window.kakao) return;
+  const branch = branches.find((item) => item.id === id);
+  if (!branch || !map || !window.kakao) return;
 
   const pos = new kakao.maps.LatLng(branch.lat, branch.lng);
   map.panTo(pos);
   map.setLevel(5);
   setCaption(branch);
-  setActiveCard(branch.id);
 }
 
 function initKakaoMap() {
@@ -110,7 +113,7 @@ function initKakaoMap() {
 
   loadKakaoMapScript()
     .then(() => {
-      const center = new kakao.maps.LatLng(36.48, 127.05);
+      const center = new kakao.maps.LatLng(36.35, 127.1);
 
       map = new kakao.maps.Map(mapContainer, {
         center,
@@ -123,33 +126,34 @@ function initKakaoMap() {
         const position = new kakao.maps.LatLng(branch.lat, branch.lng);
         bounds.extend(position);
 
-        const marker = new kakao.maps.Marker({
-          map,
+        const marker = new kakao.maps.CustomOverlay({
           position,
-          title: branch.name,
+          content: makeMarkerContent(branch),
+          yAnchor: 1,
+          clickable: true,
         });
 
-        new kakao.maps.CustomOverlay({
-          map,
-          position,
-          yAnchor: 2.25,
-          content: `<div class="marker-label">${branch.short}</div>`,
-        });
+        marker.setMap(map);
+        kakaoMarkers.push(marker);
 
         const infoWindow = new kakao.maps.InfoWindow({
           content: `
-            <div style="padding:14px 16px;min-width:240px;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;">
+            <div style="padding:14px 16px;min-width:230px;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;">
               <strong style="display:block;margin-bottom:6px;color:#1f2933;font-size:15px;">${branch.name}</strong>
               <span style="display:block;color:#667085;font-size:13px;line-height:1.45;">${branch.address}</span>
             </div>
           `,
         });
 
+        kakao.maps.event.addListener(map, "click", () => {
+          activeInfoWindow?.close();
+        });
+
         kakao.maps.event.addListener(marker, "click", () => {
-          if (activeInfoWindow) activeInfoWindow.close();
-          infoWindow.open(map, marker);
+          activeInfoWindow?.close();
+          infoWindow.open(map);
           activeInfoWindow = infoWindow;
-          focusBranch(branch);
+          setActiveBranch(branch.id);
         });
       });
 
@@ -157,20 +161,24 @@ function initKakaoMap() {
 
       document.querySelectorAll(".branch-card").forEach((card) => {
         card.addEventListener("click", () => {
-          const branch = branches.find((item) => item.id === card.dataset.branch);
-          if (branch) focusBranch(branch);
+          setActiveBranch(card.dataset.branch);
         });
       });
 
       setTimeout(() => {
         map.relayout();
         map.setBounds(bounds);
-      }, 300);
+      }, 250);
 
       setCaption(branches[0]);
     })
-    .catch((error) => {
-      showMapError(error.message || "카카오 지도 설정을 확인해야 합니다.");
+    .catch(() => {
+      mapContainer.innerHTML = `
+        <div class="map-loading">
+          <strong>지도를 불러오지 못했습니다</strong>
+          <p>map-config.js의 카카오 JavaScript 키와 Render 도메인 등록을 확인하세요.</p>
+        </div>
+      `;
     });
 }
 
