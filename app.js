@@ -84,8 +84,11 @@ function loadKakaoMapScript() {
 }
 
 function setCaption(branch) {
-  document.querySelector("#selectedBranchName").textContent = branch.name;
-  document.querySelector("#selectedBranchAddress").textContent = branch.address;
+  const name = document.querySelector("#selectedBranchName");
+  const address = document.querySelector("#selectedBranchAddress");
+
+  if (name) name.textContent = branch.name;
+  if (address) address.textContent = branch.address;
 }
 
 function setActiveCard(id) {
@@ -139,7 +142,7 @@ function initKakaoMap() {
         const infoWindow = new kakao.maps.InfoWindow({
           content: `
             <div style="padding:14px 16px;min-width:240px;font-family:-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo','Noto Sans KR',sans-serif;">
-              <strong style="display:block;margin-bottom:6px;color:#1f2933;font-size:15px;">${branch.name}</strong>
+              <strong style="display:block;margin-bottom:6px;color:#172033;font-size:15px;">${branch.name}</strong>
               <span style="display:block;color:#667085;font-size:13px;line-height:1.45;">${branch.address}</span>
             </div>
           `,
