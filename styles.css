@@ -25,13 +25,13 @@ a {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  background: #10233f;
+  background: #1f2933;
   color: #fff;
   font-size: 14px;
 }
 
 .top-notice strong {
-  color: #8bd3ff;
+  color: #d9a441;
 }
 
 .site-header {
@@ -65,7 +65,7 @@ a {
   border-radius: 16px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, #0066ff, #00b2ff);
+  background: linear-gradient(135deg, #c1121f, #ef233c);
   color: #fff;
   font-weight: 900;
 }
@@ -96,7 +96,7 @@ a {
   border: 0;
   border-radius: 999px;
   padding: 10px 16px;
-  background: #10233f;
+  background: #1f2933;
   color: #fff;
   font-weight: 800;
 }
@@ -119,7 +119,7 @@ a {
   overflow: hidden;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0e2544, #1f6feb);
+  background: linear-gradient(135deg, #263241, #3b1f22);
 }
 
 .hero-bg {
@@ -151,14 +151,14 @@ a {
 
 .eyebrow {
   margin: 0 0 18px;
-  color: #8bd3ff;
+  color: #d9a441;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.16em;
 }
 
 .eyebrow.dark {
-  color: #0066ff;
+  color: #c1121f;
 }
 
 .hero h1 {
@@ -196,7 +196,7 @@ a {
 
 .primary-button {
   background: #fff;
-  color: #0e2544;
+  color: #263241;
 }
 
 .secondary-button {
@@ -217,7 +217,7 @@ a {
 }
 
 .hero-card span {
-  color: #0066ff;
+  color: #c1121f;
   font-weight: 900;
 }
 
@@ -280,7 +280,7 @@ a {
 
 .section-title p {
   margin: 0 0 10px;
-  color: #0066ff;
+  color: #c1121f;
   font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.16em;
@@ -313,7 +313,7 @@ a {
 }
 
 .intro-grid span {
-  color: #0066ff;
+  color: #c1121f;
   font-weight: 900;
 }
 
@@ -347,8 +347,8 @@ a {
   height: 170px;
 }
 
-.gradient-1 { background: linear-gradient(135deg, #0066ff, #77d5ff); }
-.gradient-2 { background: linear-gradient(135deg, #13294b, #2f80ed); }
+.gradient-1 { background: linear-gradient(135deg, #c1121f, #ffb3b3); }
+.gradient-2 { background: linear-gradient(135deg, #13294b, #d00000); }
 .gradient-3 { background: linear-gradient(135deg, #00a58e, #8ee6d8); }
 .gradient-4 { background: linear-gradient(135deg, #ff8a00, #ffd36e); }
 
@@ -357,7 +357,7 @@ a {
 }
 
 .product-body span {
-  color: #0066ff;
+  color: #c1121f;
   font-size: 13px;
   font-weight: 900;
 }
@@ -376,13 +376,13 @@ a {
 
 .product-body a {
   font-weight: 900;
-  color: #0066ff;
+  color: #c1121f;
 }
 
 .reservation-section {
   max-width: none;
   padding: 90px 24px;
-  background: #eaf3ff;
+  background: #f7f4ef;
 }
 
 .reservation-box {
@@ -448,7 +448,7 @@ a {
   height: 54px;
   border: 0;
   border-radius: 16px;
-  background: #0066ff;
+  background: #c1121f;
   color: #fff;
   font-weight: 900;
   font-size: 16px;
@@ -473,7 +473,7 @@ a {
 }
 
 .boarding-card strong {
-  color: #0066ff;
+  color: #c1121f;
 }
 
 .boarding-card h3 {
@@ -495,9 +495,9 @@ a {
   place-items: center;
   background:
     linear-gradient(rgba(16, 35, 63, 0.72), rgba(16, 35, 63, 0.72)),
-    radial-gradient(circle at 20% 20%, #8bd3ff, transparent 30%),
-    radial-gradient(circle at 80% 80%, #0066ff, transparent 28%),
-    #10233f;
+    radial-gradient(circle at 20% 20%, #d9a441, transparent 30%),
+    radial-gradient(circle at 80% 80%, #c1121f, transparent 28%),
+    #1f2933;
   color: #fff;
   text-align: center;
 }
@@ -510,10 +510,10 @@ a {
   padding: 22px;
   color: #fff;
   font-weight: 900;
-  background: linear-gradient(135deg, #1c355e, #0066ff);
+  background: linear-gradient(135deg, #1c355e, #c1121f);
 }
 
-.gallery-grid div:nth-child(2) { background: linear-gradient(135deg, #004d61, #00b2ff); }
+.gallery-grid div:nth-child(2) { background: linear-gradient(135deg, #004d61, #ef233c); }
 .gallery-grid div:nth-child(3) { background: linear-gradient(135deg, #2f4858, #00a58e); }
 .gallery-grid div:nth-child(4) { background: linear-gradient(135deg, #623b1c, #ff8a00); }
 
@@ -552,8 +552,8 @@ a {
   border-radius: 999px;
   padding: 6px 10px;
   text-align: center;
-  background: #eaf3ff;
-  color: #0066ff;
+  background: #f7f4ef;
+  color: #c1121f;
   font-size: 12px;
   font-weight: 900;
 }
@@ -568,7 +568,7 @@ a {
 }
 
 .contact-box {
-  background: #10233f;
+  background: #1f2933;
   color: #fff;
 }
 
@@ -599,7 +599,7 @@ a {
   display: grid;
   place-items: center;
   background: #fff;
-  color: #10233f;
+  color: #1f2933;
   font-weight: 900;
 }
 
@@ -618,7 +618,7 @@ a {
   border-radius: 18px;
   display: grid;
   place-items: center;
-  background: #10233f;
+  background: #1f2933;
   color: #fff;
   font-size: 13px;
   font-weight: 900;
@@ -627,7 +627,7 @@ a {
 
 .site-footer {
   padding: 46px 24px;
-  background: #071525;
+  background: #111827;
   color: #fff;
 }
 
@@ -771,3 +771,313 @@ a {
     border-radius: 15px;
   }
 }
+
+
+
+
+
+/* REFINED RED ACCENT THEME START */
+
+/*
+  방향:
+  - 전체 배경은 흰색/아이보리
+  - 텍스트는 차콜/네이비
+  - 빨강은 버튼, 라벨, 포인트에만 사용
+*/
+
+:root {
+  --yj-red: #b21f2d;
+  --yj-red-dark: #7f1720;
+  --yj-charcoal: #1f2933;
+  --yj-navy: #263241;
+  --yj-cream: #f7f4ef;
+  --yj-soft-red: #fff5f5;
+  --yj-line: rgba(31, 41, 51, 0.1);
+  --yj-gold: #d9a441;
+}
+
+/* 기본 톤 */
+body {
+  color: var(--yj-charcoal) !important;
+  background: #f7f4ef !important;
+}
+
+.site-header {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid rgba(31, 41, 51, 0.08) !important;
+}
+
+.top-notice {
+  background: #1f2933 !important;
+}
+
+.top-notice strong {
+  color: #f5d087 !important;
+}
+
+/* 로고만 레드 포인트 */
+.logo-mark {
+  background: linear-gradient(135deg, #b21f2d, #7f1720) !important;
+}
+
+/* 메뉴 */
+.desktop-nav a:hover,
+.product-body a,
+.section-title p,
+.eyebrow.dark,
+.intro-grid span,
+.boarding-card strong {
+  color: var(--yj-red) !important;
+}
+
+/* 히어로는 검정/차콜 + 은은한 레드 */
+.hero {
+  background: linear-gradient(135deg, #151a21, #3b1f22) !important;
+}
+
+.hero-overlay {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(178, 31, 45, 0.28), transparent 28%),
+    linear-gradient(90deg, rgba(15, 20, 27, 0.96), rgba(31, 41, 51, 0.82), rgba(90, 25, 31, 0.2)) !important;
+}
+
+.eyebrow {
+  color: #f5d087 !important;
+}
+
+/* 버튼만 레드 */
+.primary-button {
+  background: #ffffff !important;
+  color: #7f1720 !important;
+}
+
+.secondary-button {
+  border: 1px solid rgba(255, 255, 255, 0.55) !important;
+  color: #fff !important;
+}
+
+.reservation-form button,
+.document-summary span {
+  background: var(--yj-red) !important;
+}
+
+/* 카드들은 흰색 유지 */
+.quick-links a,
+.intro-grid article,
+.product-card,
+.boarding-card,
+.notice-box,
+.reservation-form {
+  background: #fff !important;
+  border: 1px solid rgba(31, 41, 51, 0.08) !important;
+  box-shadow: 0 16px 44px rgba(31, 41, 51, 0.08) !important;
+}
+
+/* 상품 카드 상단만 은은한 레드/골드/차콜 계열 */
+.gradient-1 {
+  background: linear-gradient(135deg, #7f1720, #b21f2d) !important;
+}
+
+.gradient-2 {
+  background: linear-gradient(135deg, #1f2933, #4b5563) !important;
+}
+
+.gradient-3 {
+  background: linear-gradient(135deg, #7a4f13, #d9a441) !important;
+}
+
+.gradient-4 {
+  background: linear-gradient(135deg, #3b1f22, #9f5f67) !important;
+}
+
+/* 예약 영역은 빨강 배경 금지 */
+.reservation-section {
+  background: linear-gradient(180deg, #f7f4ef, #ffffff) !important;
+}
+
+/* 고객센터는 차콜 */
+.contact-box,
+.floating-menu a {
+  background: #1f2933 !important;
+}
+
+/* 지도/탑승 영역 */
+.map-placeholder {
+  background:
+    linear-gradient(rgba(31, 41, 51, 0.78), rgba(31, 41, 51, 0.78)),
+    radial-gradient(circle at 20% 20%, rgba(217, 164, 65, 0.35), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(178, 31, 45, 0.24), transparent 28%),
+    #1f2933 !important;
+}
+
+/* 사업자 정보 섹션 */
+.document-section {
+  padding-top: 70px;
+}
+
+.section-desc {
+  display: block;
+  max-width: 720px;
+  margin: 14px auto 0;
+  color: #657083;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.document-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 26px;
+}
+
+.document-summary article {
+  min-height: 150px;
+  padding: 24px;
+  border-radius: 26px;
+  background: #fff;
+  border: 1px solid rgba(31, 41, 51, 0.08);
+  box-shadow: 0 16px 42px rgba(31, 41, 51, 0.08);
+}
+
+.document-summary strong {
+  display: block;
+  color: #1f2933;
+  font-size: 18px;
+  letter-spacing: -0.04em;
+}
+
+.document-summary p {
+  min-height: 45px;
+  margin: 10px 0 14px;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.document-summary span {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #b21f2d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.document-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.document-card {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 14px 38px rgba(31, 41, 51, 0.1);
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.document-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 54px rgba(31, 41, 51, 0.16);
+}
+
+.document-card img {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+  background: #f5f5f5;
+}
+
+.document-card div {
+  padding: 18px;
+}
+
+.document-card strong {
+  display: block;
+  color: #1f2933;
+  font-size: 16px;
+  letter-spacing: -0.04em;
+}
+
+.document-card span {
+  display: block;
+  margin-top: 6px;
+  color: #b21f2d;
+  font-weight: 900;
+  font-size: 13px;
+}
+
+/* 확대 모달 */
+.doc-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: none;
+  padding: 70px 20px 30px;
+  background: rgba(0, 0, 0, 0.78);
+  overflow: auto;
+}
+
+.doc-modal.active {
+  display: grid;
+  place-items: start center;
+}
+
+.doc-modal img {
+  width: min(760px, 96vw);
+  height: auto;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 30px 90px rgba(0,0,0,0.4);
+}
+
+.doc-modal-close {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: #fff;
+  color: #1f2933;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.site-footer {
+  background: #111827 !important;
+}
+
+@media (max-width: 1100px) {
+  .document-summary,
+  .document-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .document-card img {
+    height: 340px;
+  }
+}
+
+@media (max-width: 640px) {
+  .document-summary,
+  .document-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .document-card img {
+    height: 410px;
+  }
+}
+
+/* REFINED RED ACCENT THEME END */
