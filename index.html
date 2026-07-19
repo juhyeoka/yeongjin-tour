@@ -12,7 +12,7 @@
     content="영진관광은 대전·세종·천안·보령을 기반으로 전세버스, 기업 통근, 단체관광, 수학여행, 행사 이동 서비스를 제공하는 운송 전문 기업입니다."
   >
 
-  <link rel="stylesheet" href="./styles.css?v=yj-images-mapfix-20260719">
+  <link rel="stylesheet" href="./styles.css?v=yj-slider-spacing-20260719">
 </head>
 
 <body>
@@ -21,11 +21,8 @@
   <header class="site-header" id="top">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="영진관광 홈">
-        <span class="brand-mark" aria-hidden="true">YJ</span>
-        <span class="brand-copy">
-          <strong>영진관광</strong>
-          <small>YEONGJIN TOUR</small>
-        </span>
+        <span class="brand-logo-asset" aria-hidden="true"></span>
+        <span class="sr-only">영진관광 YEONGJIN TOUR</span>
       </a>
 
       <nav class="desktop-nav" aria-label="주요 메뉴">
@@ -74,12 +71,43 @@
 
   <main id="mainContent">
     <section class="hero-section" aria-labelledby="heroTitle">
-      <img
-        class="hero-image"
-        src="./assets/bus.png"
-        alt="도심을 운행하는 영진관광 대형버스"
-        fetchpriority="high"
-      >
+      <div class="hero-slider" aria-hidden="true">
+        <div class="hero-slider-track">
+          <div class="hero-slide">
+            <img
+              class="hero-image"
+              src="./assets/generated/business-charter.webp"
+              alt=""
+              fetchpriority="high"
+              decoding="async"
+            >
+          </div>
+          <div class="hero-slide">
+            <img
+              class="hero-image"
+              src="./assets/generated/business-commute.webp"
+              alt=""
+              decoding="async"
+            >
+          </div>
+          <div class="hero-slide">
+            <img
+              class="hero-image"
+              src="./assets/generated/business-tour.webp"
+              alt=""
+              decoding="async"
+            >
+          </div>
+          <div class="hero-slide">
+            <img
+              class="hero-image"
+              src="./assets/generated/business-event.webp"
+              alt=""
+              decoding="async"
+            >
+          </div>
+        </div>
+      </div>
       <div class="hero-shade" aria-hidden="true"></div>
       <div class="hero-route" aria-hidden="true"></div>
 
@@ -127,6 +155,13 @@
             <span>단체 이동 지원</span>
           </article>
         </div>
+      </div>
+
+      <div class="hero-pagination" aria-label="메인 배너 선택">
+        <button class="active" type="button" data-hero-slide="0" aria-label="전세버스 운송 배너 보기" aria-current="true"></button>
+        <button type="button" data-hero-slide="1" aria-label="기업 통근 배너 보기"></button>
+        <button type="button" data-hero-slide="2" aria-label="단체관광 배너 보기"></button>
+        <button type="button" data-hero-slide="3" aria-label="행사 이동 배너 보기"></button>
       </div>
     </section>
 
@@ -218,11 +253,35 @@
 
         <div class="about-visual">
           <div class="about-photo-wrap">
-            <img
-              src="./assets/bus.png"
-              alt="영진관광 버스와 도심 야경"
-              loading="lazy"
-            >
+            <div class="about-slider-track">
+              <figure class="about-slide">
+                <img
+                  src="./assets/generated/business-charter.webp"
+                  alt="산길을 운행하는 영진관광 전세버스"
+                  loading="lazy"
+                >
+              </figure>
+              <figure class="about-slide">
+                <img
+                  src="./assets/generated/business-commute.webp"
+                  alt="기업 통근 승객을 태우는 영진관광 버스"
+                  loading="lazy"
+                >
+              </figure>
+              <figure class="about-slide">
+                <img
+                  src="./assets/generated/business-tour.webp"
+                  alt="여행객과 함께하는 영진관광 단체관광 버스"
+                  loading="lazy"
+                >
+              </figure>
+            </div>
+
+            <div class="about-pagination" aria-label="회사소개 사진 선택">
+              <button class="active" type="button" data-about-slide="0" aria-label="전세버스 사진 보기" aria-current="true"></button>
+              <button type="button" data-about-slide="1" aria-label="기업 통근 사진 보기"></button>
+              <button type="button" data-about-slide="2" aria-label="단체관광 사진 보기"></button>
+            </div>
           </div>
 
           <div class="about-stat-panel">
@@ -475,11 +534,7 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="brand-mark" aria-hidden="true">YJ</span>
-        <span>
-          <strong>영진관광</strong>
-          <small>YEONGJIN TOUR</small>
-        </span>
+        <span class="brand-logo-asset footer-logo-asset" role="img" aria-label="영진관광"></span>
       </div>
 
       <div class="footer-details">
@@ -498,7 +553,7 @@
     </div>
   </footer>
 
-  <script src="./map-config.js?v=yj-images-mapfix-20260719"></script>
-  <script src="./app.js?v=yj-images-mapfix-20260719"></script>
+  <script src="./map-config.js?v=yj-slider-spacing-20260719"></script>
+  <script src="./app.js?v=yj-slider-spacing-20260719"></script>
 </body>
 </html>

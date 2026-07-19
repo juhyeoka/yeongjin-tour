@@ -29,6 +29,71 @@ window.addEventListener("resize", () => {
   if (window.innerWidth > 820) closeMobileMenu();
 });
 
+function createAutoSlider({
+  trackSelector,
+  buttonSelector,
+  interval = 5200,
+}) {
+  const track = document.querySelector(trackSelector);
+  const buttons = [...document.querySelectorAll(buttonSelector)];
+
+  if (!track || buttons.length < 2) return;
+
+  let activeIndex = 0;
+  let timer = null;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function showSlide(index) {
+    activeIndex = (index + buttons.length) % buttons.length;
+    track.style.transform = `translate3d(-${activeIndex * 100}%, 0, 0)`;
+
+    buttons.forEach((button, buttonIndex) => {
+      const isActive = buttonIndex === activeIndex;
+      button.classList.toggle("active", isActive);
+      button.toggleAttribute("aria-current", isActive);
+    });
+  }
+
+  function stopAutoPlay() {
+    if (timer) window.clearInterval(timer);
+    timer = null;
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    if (prefersReducedMotion.matches || document.hidden) return;
+    timer = window.setInterval(() => showSlide(activeIndex + 1), interval);
+  }
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      showSlide(index);
+      startAutoPlay();
+    });
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) stopAutoPlay();
+    else startAutoPlay();
+  });
+
+  prefersReducedMotion.addEventListener?.("change", startAutoPlay);
+  showSlide(0);
+  startAutoPlay();
+}
+
+createAutoSlider({
+  trackSelector: ".hero-slider-track",
+  buttonSelector: "[data-hero-slide]",
+  interval: 5400,
+});
+
+createAutoSlider({
+  trackSelector: ".about-slider-track",
+  buttonSelector: "[data-about-slide]",
+  interval: 6200,
+});
+
 const branches = [
   {
     id: "daejeon",
