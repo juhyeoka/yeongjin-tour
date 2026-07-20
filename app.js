@@ -96,9 +96,17 @@ createAutoSlider({
 
 const branches = [
   {
+    id: "cheonan",
+    region: "천안 본점",
+    name: "주식회사 영진관광 천안 본점",
+    address: "충청남도 천안시 동남구 다가말2길 80, 1층",
+    lat: 36.7996,
+    lng: 127.1482,
+  },
+  {
     id: "daejeon",
     region: "대전",
-    name: "주식회사 영진관광 대전 본점",
+    name: "주식회사 영진관광 대전 사업장",
     address: "대전광역시 서구 계백로1249번길 58",
     lat: 36.3057,
     lng: 127.3739,
@@ -110,14 +118,6 @@ const branches = [
     address: "세종특별자치시 갈매로 351, 5118호",
     lat: 36.5038,
     lng: 127.2628,
-  },
-  {
-    id: "cheonan",
-    region: "천안",
-    name: "영진관광 천안 사업장",
-    address: "충청남도 천안시 동남구 다가말2길 80, 1층",
-    lat: 36.7996,
-    lng: 127.1482,
   },
   {
     id: "boryeong",
@@ -133,7 +133,7 @@ let map = null;
 let activeInfoWindow = null;
 let mapBounds = null;
 let activeBranch = branches[0];
-let hasFocusedBranch = false;
+let hasFocusedBranch = true;
 let mapResizeFrame = null;
 
 function showMapError(message) {
@@ -243,8 +243,8 @@ function initializeKakaoMap() {
   if (!mapContainer || map) return;
 
   map = new kakao.maps.Map(mapContainer, {
-    center: new kakao.maps.LatLng(36.48, 127.05),
-    level: 10,
+    center: new kakao.maps.LatLng(branches[0].lat, branches[0].lng),
+    level: 7,
   });
 
   mapBounds = new kakao.maps.LatLngBounds();
@@ -277,6 +277,8 @@ function initializeKakaoMap() {
   });
 
   map.setBounds(mapBounds);
+  map.setCenter(new kakao.maps.LatLng(branches[0].lat, branches[0].lng));
+  map.setLevel(7);
 
   document.querySelectorAll(".branch-card").forEach((card) => {
     card.addEventListener("click", () => {

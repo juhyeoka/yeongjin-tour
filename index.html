@@ -12,7 +12,7 @@
     content="영진관광은 대전·세종·천안·보령을 기반으로 전세버스, 기업 통근, 단체관광, 수학여행, 행사 이동 서비스를 제공하는 운송 전문 기업입니다."
   >
 
-  <link rel="stylesheet" href="./styles.css?v=yj-slider-spacing-20260719">
+  <link rel="stylesheet" href="./styles.css?v=yj-mobile-cheonan-docs-20260720">
 </head>
 
 <body>
@@ -21,8 +21,11 @@
   <header class="site-header" id="top">
     <div class="header-inner">
       <a class="brand" href="#top" aria-label="영진관광 홈">
-        <span class="brand-logo-asset" aria-hidden="true"></span>
-        <span class="sr-only">영진관광 YEONGJIN TOUR</span>
+        <span class="brand-slash-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <strong>영진관광</strong>
+          <small>YEONGJIN TOUR</small>
+        </span>
       </a>
 
       <nav class="desktop-nav" aria-label="주요 메뉴">
@@ -30,6 +33,7 @@
         <a href="#business">사업분야</a>
         <a href="#fleet">차량안내</a>
         <a href="#locations">사업장안내</a>
+        <a href="#documents">사업자등록</a>
         <a href="#contact">고객센터</a>
       </nav>
 
@@ -64,6 +68,7 @@
       <a href="#business">사업분야</a>
       <a href="#fleet">차량안내</a>
       <a href="#locations">사업장안내</a>
+      <a href="#documents">사업자등록</a>
       <a href="#contact">고객센터</a>
       <a class="mobile-call" href="tel:0415880058">전화 연결 041-588-0058</a>
     </nav>
@@ -440,7 +445,16 @@
 
       <div class="locations-layout">
         <div class="branch-list" aria-label="영진관광 사업장 목록">
-          <button class="branch-card active" type="button" data-branch="daejeon">
+          <button class="branch-card active" type="button" data-branch="cheonan">
+            <span>천안 본점</span>
+            <div>
+              <strong>주식회사 영진관광</strong>
+              <p>충청남도 천안시 동남구 다가말2길 80, 1층</p>
+            </div>
+            <i aria-hidden="true">→</i>
+          </button>
+
+          <button class="branch-card" type="button" data-branch="daejeon">
             <span>대전</span>
             <div>
               <strong>주식회사 영진관광</strong>
@@ -454,15 +468,6 @@
             <div>
               <strong>주식회사 영진관광</strong>
               <p>세종특별자치시 갈매로 351, 5118호</p>
-            </div>
-            <i aria-hidden="true">→</i>
-          </button>
-
-          <button class="branch-card" type="button" data-branch="cheonan">
-            <span>천안</span>
-            <div>
-              <strong>영진관광 천안 사업장</strong>
-              <p>충청남도 천안시 동남구 다가말2길 80, 1층</p>
             </div>
             <i aria-hidden="true">→</i>
           </button>
@@ -494,9 +499,9 @@
               </svg>
             </span>
             <div class="selected-branch-copy">
-              <span id="selectedBranchRegion">대전</span>
-              <strong id="selectedBranchName">주식회사 영진관광 대전 본점</strong>
-              <p id="selectedBranchAddress">대전광역시 서구 계백로1249번길 58</p>
+              <span id="selectedBranchRegion">천안 본점</span>
+              <strong id="selectedBranchName">주식회사 영진관광 천안 본점</strong>
+              <p id="selectedBranchAddress">충청남도 천안시 동남구 다가말2길 80, 1층</p>
             </div>
             <a class="selected-branch-call" href="tel:0415880058">전화 문의</a>
           </article>
@@ -529,12 +534,81 @@
         </a>
       </div>
     </section>
+
+    <section class="documents-section section" id="documents" aria-labelledby="documentsTitle">
+      <div class="section-heading centered documents-heading">
+        <p class="section-eyebrow">COMPANY DOCUMENTS</p>
+        <h2 id="documentsTitle">사업자등록 안내</h2>
+        <p>영진관광과 관계 법인의 사업자등록증입니다. 서류를 누르면 원본 크기로 확인할 수 있습니다.</p>
+      </div>
+
+      <div class="document-grid">
+        <a class="document-card main-document" href="./assets/docs/juy2.jpeg" target="_blank" rel="noopener">
+          <div class="document-preview">
+            <img src="./assets/docs/juy2.jpeg" alt="주식회사 영진관광 천안 본점 사업자등록증" loading="lazy">
+            <span>원본 보기</span>
+          </div>
+          <div class="document-copy">
+            <small>천안 본점</small>
+            <strong>주식회사 영진관광</strong>
+          </div>
+        </a>
+
+        <a class="document-card" href="./assets/docs/newy.jpeg" target="_blank" rel="noopener">
+          <div class="document-preview">
+            <img src="./assets/docs/newy.jpeg" alt="뉴영진관광협동조합 천안 사업자등록증" loading="lazy">
+            <span>원본 보기</span>
+          </div>
+          <div class="document-copy">
+            <small>천안</small>
+            <strong>뉴영진관광협동조합</strong>
+          </div>
+        </a>
+
+        <a class="document-card" href="./assets/docs/juy3.jpeg" target="_blank" rel="noopener">
+          <div class="document-preview">
+            <img src="./assets/docs/juy3.jpeg" alt="주식회사 영진관광 대전 사업자등록증" loading="lazy">
+            <span>원본 보기</span>
+          </div>
+          <div class="document-copy">
+            <small>대전</small>
+            <strong>주식회사 영진관광</strong>
+          </div>
+        </a>
+
+        <a class="document-card" href="./assets/docs/juy.jpeg" target="_blank" rel="noopener">
+          <div class="document-preview">
+            <img src="./assets/docs/juy.jpeg" alt="주식회사 영진관광 세종 사업자등록증" loading="lazy">
+            <span>원본 보기</span>
+          </div>
+          <div class="document-copy">
+            <small>세종</small>
+            <strong>주식회사 영진관광</strong>
+          </div>
+        </a>
+
+        <a class="document-card" href="./assets/docs/juh.jpeg" target="_blank" rel="noopener">
+          <div class="document-preview">
+            <img src="./assets/docs/juh.jpeg" alt="주식회사 하나관광 보령 사업자등록증" loading="lazy">
+            <span>원본 보기</span>
+          </div>
+          <div class="document-copy">
+            <small>보령</small>
+            <strong>주식회사 하나관광</strong>
+          </div>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <span class="brand-logo-asset footer-logo-asset" role="img" aria-label="영진관광"></span>
+        <span class="brand-slash-mark footer-slash-mark" aria-hidden="true"></span>
+        <span>
+          <strong>영진관광</strong>
+          <small>YEONGJIN TOUR</small>
+        </span>
       </div>
 
       <div class="footer-details">
@@ -542,7 +616,7 @@
         <span>대표전화: 041-588-0058</span>
         <span>팩스: 041-568-8666</span>
         <span>메일: yjtour58@naver.com</span>
-        <span>주소: 대전광역시 서구 계백로1249번길 58</span>
+        <span>본점: 충청남도 천안시 동남구 다가말2길 80, 1층</span>
       </div>
 
       <small class="copyright">© YEONGJIN TOUR. All Rights Reserved.</small>
@@ -553,7 +627,7 @@
     </div>
   </footer>
 
-  <script src="./map-config.js?v=yj-slider-spacing-20260719"></script>
-  <script src="./app.js?v=yj-slider-spacing-20260719"></script>
+  <script src="./map-config.js?v=yj-mobile-cheonan-docs-20260720"></script>
+  <script src="./app.js?v=yj-mobile-cheonan-docs-20260720"></script>
 </body>
 </html>
