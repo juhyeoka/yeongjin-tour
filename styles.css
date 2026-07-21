@@ -1617,13 +1617,20 @@ svg {
   }
 
   .mobile-nav.active {
-    position: fixed;
-    inset: 70px 0 0;
+    position: absolute;
+    z-index: 220;
+    top: 100%;
+    right: 0;
+    bottom: auto;
+    left: 0;
     align-content: start;
     width: 100%;
+    height: calc(100dvh - 70px);
     padding: 18px;
     overflow-y: auto;
     background: #fff;
+    border-top: 1px solid var(--line);
+    box-shadow: 0 24px 48px rgba(7, 29, 56, 0.18);
   }
 
   .mobile-nav a {
