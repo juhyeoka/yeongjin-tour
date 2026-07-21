@@ -100,6 +100,7 @@ const branches = [
     region: "천안 본점",
     name: "주식회사 영진관광 천안 본점",
     address: "충청남도 천안시 동남구 다가말2길 80, 1층",
+    phone: "0415880058",
     lat: 36.7996,
     lng: 127.1482,
   },
@@ -108,6 +109,7 @@ const branches = [
     region: "대전",
     name: "주식회사 영진관광 대전 사업장",
     address: "대전광역시 서구 계백로1249번길 58",
+    phone: "0415880058",
     lat: 36.3057,
     lng: 127.3739,
   },
@@ -116,14 +118,25 @@ const branches = [
     region: "세종",
     name: "주식회사 영진관광 세종 지사",
     address: "세종특별자치시 갈매로 351, 5118호",
+    phone: "0415880058",
     lat: 36.5038,
     lng: 127.2628,
+  },
+  {
+    id: "sejong-association",
+    region: "세종 조합",
+    name: "(사) 세종특별자치시 전세버스운송사업조합",
+    address: "세종특별자치시 조치원읍 문화로 3-1",
+    phone: "0448653258",
+    lat: 36.6019288293681,
+    lng: 127.300933280237,
   },
   {
     id: "boryeong",
     region: "보령",
     name: "주식회사 하나관광 보령 사업장",
     address: "충청남도 보령시 번영로 30",
+    phone: "0415880058",
     lat: 36.3507,
     lng: 126.5964,
   },
@@ -184,10 +197,15 @@ function updateSelectedBranch(branch) {
   const region = document.querySelector("#selectedBranchRegion");
   const name = document.querySelector("#selectedBranchName");
   const address = document.querySelector("#selectedBranchAddress");
+  const call = document.querySelector(".selected-branch-call");
 
   if (region) region.textContent = branch.region;
   if (name) name.textContent = branch.name;
   if (address) address.textContent = branch.address;
+  if (call) {
+    call.href = `tel:${branch.phone}`;
+    call.textContent = branch.id === "sejong-association" ? "조합 전화" : "전화 문의";
+  }
 }
 
 function setActiveBranchCard(branchId) {
