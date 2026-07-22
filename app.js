@@ -100,16 +100,16 @@ const branches = [
     region: "천안 본점",
     name: "주식회사 영진관광 천안 본점",
     address: "충청남도 천안시 동남구 다가말2길 80, 1층",
-    phone: "0415880058",
-    lat: 36.7996,
-    lng: 127.1482,
+    phone: "15222274",
+    lat: 36.79702699774491,
+    lng: 127.14137277297463,
   },
   {
     id: "daejeon",
     region: "대전",
     name: "주식회사 영진관광 대전 사업장",
     address: "대전광역시 서구 계백로1249번길 58",
-    phone: "0415880058",
+    phone: "15222274",
     lat: 36.3057,
     lng: 127.3739,
   },
@@ -118,25 +118,25 @@ const branches = [
     region: "세종",
     name: "주식회사 영진관광 세종 지사",
     address: "세종특별자치시 갈매로 351, 5118호",
-    phone: "0415880058",
+    phone: "15222274",
     lat: 36.5038,
     lng: 127.2628,
   },
   {
-    id: "sejong-association",
-    region: "세종 조합",
-    name: "(사) 세종특별자치시 전세버스운송사업조합",
-    address: "세종특별자치시 조치원읍 문화로 3-1",
-    phone: "0448653258",
-    lat: 36.6019288293681,
-    lng: 127.300933280237,
+    id: "new-yeongjin-cooperative",
+    region: "협동조합",
+    name: "뉴영진관광협동조합",
+    address: "충청남도 천안시 동남구 다가말2길 80, 1층",
+    phone: "15222274",
+    lat: 36.79702699774491,
+    lng: 127.14137277297463,
   },
   {
     id: "boryeong",
     region: "보령",
     name: "주식회사 하나관광 보령 사업장",
     address: "충청남도 보령시 번영로 30",
-    phone: "0415880058",
+    phone: "15222274",
     lat: 36.3507,
     lng: 126.5964,
   },
@@ -204,7 +204,7 @@ function updateSelectedBranch(branch) {
   if (address) address.textContent = branch.address;
   if (call) {
     call.href = `tel:${branch.phone}`;
-    call.textContent = branch.id === "sejong-association" ? "조합 전화" : "전화 문의";
+    call.textContent = branch.id === "new-yeongjin-cooperative" ? "협동조합 전화" : "전화 문의";
   }
 }
 
@@ -245,12 +245,16 @@ function scheduleMapRelayout() {
   });
 }
 
-function createInfoWindow(branch) {
+function createInfoWindow(branchGroup) {
+  const names = branchGroup
+    .map((branch) => `<strong style="display:block;color:#111a2b;font-size:14px;line-height:1.45;">${branch.name}</strong>`)
+    .join("");
+
   return new kakao.maps.InfoWindow({
     content: `
       <div style="min-width:220px;padding:13px 15px;font-family:Pretendard,SUIT,'Apple SD Gothic Neo',sans-serif;word-break:keep-all;">
-        <strong style="display:block;color:#111a2b;font-size:14px;line-height:1.4;">${branch.name}</strong>
-        <span style="display:block;margin-top:5px;color:#697386;font-size:11px;line-height:1.5;">${branch.address}</span>
+        ${names}
+        <span style="display:block;margin-top:6px;color:#697386;font-size:11px;line-height:1.5;">${branchGroup[0].address}</span>
       </div>
     `,
   });
@@ -267,30 +271,41 @@ function initializeKakaoMap() {
 
   mapBounds = new kakao.maps.LatLngBounds();
 
+  const branchGroups = new Map();
+
   branches.forEach((branch) => {
-    const position = new kakao.maps.LatLng(branch.lat, branch.lng);
+    const key = `${branch.lat.toFixed(7)},${branch.lng.toFixed(7)}`;
+    const branchGroup = branchGroups.get(key) || [];
+    branchGroup.push(branch);
+    branchGroups.set(key, branchGroup);
+  });
+
+  branchGroups.forEach((branchGroup) => {
+    const primaryBranch = branchGroup[0];
+    const position = new kakao.maps.LatLng(primaryBranch.lat, primaryBranch.lng);
     mapBounds.extend(position);
 
     const marker = new kakao.maps.Marker({
       map,
       position,
-      title: branch.name,
+      title: branchGroup.map((branch) => branch.name).join(" · "),
     });
 
     new kakao.maps.CustomOverlay({
       map,
       position,
       yAnchor: 2.25,
-      content: `<div class="marker-label">${branch.region}</div>`,
+      content: `<div class="marker-label">${branchGroup.map((branch) => branch.region).join(" · ")}</div>`,
     });
 
-    const infoWindow = createInfoWindow(branch);
+    const infoWindow = createInfoWindow(branchGroup);
 
     kakao.maps.event.addListener(marker, "click", () => {
+      const selectedBranch = branchGroup.find((branch) => branch.id === activeBranch?.id) || primaryBranch;
       activeInfoWindow?.close();
       infoWindow.open(map, marker);
       activeInfoWindow = infoWindow;
-      focusBranch(branch);
+      focusBranch(selectedBranch);
     });
   });
 
